@@ -15,6 +15,8 @@ print (int (KelvinToFahrenheit (505.78)))
 print (KelvinToFahrenheit (-5))
 ```
 
+- Output yang di hasilkan
+
 ![gambar](gambar/1.png)
 
 - Jika pernyataan gagal, Python menggunakan ArgumentExpression ArgumentExpression sebagai argumen argumen untuk AssertionError AssertionError. Pengecualian AssertionError Pengecualian AssertionError dapat ditangkap dan ditangani ditangani seperti pengecualian lainnya menggunakan try- kecuali pernyataan, tetapi jika dibiarkan, mereka akan menghentikan program dan menghasilkan backtrace.
@@ -35,6 +37,8 @@ else:
     fh.close()
 ```
 
+- Output yang di hasilkan
+
 ![gambar](gambar/2.png)
 
 - Contoh ini mencoba membuka file yang Anda tidak memiliki izin menulis, sehingga membuat file pengecualian
@@ -50,6 +54,8 @@ else:
     print("Written content in the file successfully")
     fh.close()
 ```
+
+- Output yang di hasilkan
 
 ![gambar](gambar/3.png)
 
@@ -67,6 +73,8 @@ finally:
     print("Error: can\'t find file or read data")
 ```
 
+- Output yang di hasilkan
+
 ![gambar](gambar/4.png)
 
 - Contoh yang sama dapat ditulis lebih bersih sebagai berikut:
@@ -82,6 +90,8 @@ try:
 except IOError:
     print("Error cant\'t find file or read data")
 ```
+
+- Output yang di hasilkan
 
 ![gambar](gambar/5.png)
 
@@ -103,6 +113,8 @@ def temp_convert (var):
 temp_convert("xyz")
 ```
 
+- Output yang di hasilkan
+
 ![gambar](gambar/6.png)
 
 #### Contoh Raising an Exception
@@ -116,6 +128,8 @@ def functionName ( level):
         # The code below to this would not be executed
         # if we raise the exception
 ```
+
+- Output yang di hasilkan
 
 ![gambar](gambar/7.png)
 
@@ -135,6 +149,8 @@ try:
 except Networkerror(e):
     print (e.args)
 ```
+
+- Output yang di hasilkan
 
 ![gambar](gambar/8.png)
 
