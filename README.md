@@ -6,7 +6,16 @@
 
 - Ketika kode di bawah dijalankan, menghasilkan hasil sebagai berikut:
 
-![gambar](gambar/a5.png)
+```
+def KelvinTo Fahrenheit (Temperature):
+    assert (Temperature >= 0), "Colder than absolute zero!"
+    return ((Temperature-273)*1.8)+32
+print (KelvinToFahrenheit (273))
+print (int (KelvinToFahrenheit (505.78)))
+print (KelvinToFahrenheit (-5))
+```
+
+![gambar](gambar/1.png)
 
 - Jika pernyataan gagal, Python menggunakan ArgumentExpression ArgumentExpression sebagai argumen argumen untuk AssertionError AssertionError. Pengecualian AssertionError Pengecualian AssertionError dapat ditangkap dan ditangani ditangani seperti pengecualian lainnya menggunakan try- kecuali pernyataan, tetapi jika dibiarkan, mereka akan menghentikan program dan menghasilkan backtrace.
 
@@ -15,12 +24,34 @@
 - Contoh-contoh ini membuka file, menulis konten file, dan keluar dengan aman karena ada tidak masalah
 - Ketika kode di bawah dijalankan, menghasilkan hasil sebagai berikut:
 
-![gambar](gambar/a6.png)
+```
+try:
+    fh= open("testfile", "w")
+    fh.write("This is my test ile for exception handling!!")
+except IOError:
+    print("Error: cant\'t find file or read data")
+else:
+    print("Written content in the file successfully")
+    fh.close()
+```
+
+![gambar](gambar/2.png)
 
 - Contoh ini mencoba membuka file yang Anda tidak memiliki izin menulis, sehingga membuat file pengecualian
 - Ketika kode di bawah dijalankan, menghasilkan hasil sebagai berikut:
 
-![gambar](gambar/a7.png)
+```
+try:
+    fh= open("testfile", "r")
+    fh.write("This is my test ile for exception handling!!")
+except IOError:
+    print("Error: cant\'t find file or read data")
+else:
+    print("Written content in the file successfully")
+    fh.close()
+```
+
+![gambar](gambar/3.png)
 
 #### Contoh The try-finally Clause
 
@@ -28,24 +59,65 @@
 - Ketika kode di bawah dijalankan, menghasilkan hasil sebagai berikut:
 - Jika Anda tidak memiliki izin untuk membuka file dalam mode tulis yang dapat ditulis, maka ini akan menghasilkan hasil berikut:
 
-![gambar](gambar/a8.png)
+```
+try:
+    fh = open("testfile", "w")
+    fh.write("This is my test file for exception handling!!")
+finally:
+    print("Error: can\'t find file or read data")
+```
+
+![gambar](gambar/4.png)
 
 - Contoh yang sama dapat ditulis lebih bersih sebagai berikut:
 
-![gambar](gambar/a9.png)
+```
+try:
+    fh= open("testfile", "r")
+    try:
+        fh.write("This is my test ile for exception handling!!")
+    finally:
+        print ("Going to close the file")
+        fh.close()
+except IOError:
+    print("Error cant\'t find file or read data")
+```
+
+![gambar](gambar/5.png)
 
 #### Contoh Argument of an Exception
 
 - Berikut adalah contoh untuk satu pengecualian
 - Ketika kode di bawah dijalankan, menghasilkan hasil sebagai berikut:
 
-![gambar](gambar/a10.png)
+```
+#Define a function here.
+
+def temp_convert (var):
+    try:
+        return int (var)
+    except ValueError (Argument):
+        print("The argument Call above function here. does not contain numbers\n", Argument)
+# Call above funcition here.
+
+temp_convert("xyz")
+```
+
+![gambar](gambar/6.png)
 
 #### Contoh Raising an Exception
 
 - Pengecualian dapat berupa string, kelas, atau objek. Sebagian besar pengecualian adalah pengecualian dari inti Python menimbulkan adalah kelas, dengan argumen=argumen yang merupakan turunan dari kelas. Mendefinisikan pengecualian barucukup mudah dan dapat dilakukan sebagai berikut:
 
-![gambar](gambar/a11.png)
+```
+def functionName ( level):
+    if level < 1:
+        raise ("Invalid level!", level)
+        # The code below to this would not be executed
+        # if we raise the exception
+```
+
+![gambar](gambar/7.png)
 
 #### Contoh User-Defined Exception
 
@@ -54,7 +126,17 @@
 - Di blok coba, pengecualian yang ditentukan pengguna dimunculkan dan ditangkap di blok kecuali. Itu variabel e digunakan untuk membuat instance dari kelas Networkerror.
 - Ketika kode di bawah dijalankan, menghasilkan hasil sebagai berikut:
 
-![gambar](gambar/a12.png)
+```
+class Networkerror (RuntimeError):
+    def _init_(self, arg):
+        self, arg = arg
+try:
+    raise Networkerror ("Bad hostname")
+except Networkerror(e):
+    print (e.args)
+```
+
+![gambar](gambar/8.png)
 
 
 
